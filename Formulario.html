@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="Description" content="Formulario prron"/>
+        <meta name="keyword" content="Formulario"/>
+        <link rel="icon" href="/Imagenes/585e4beacb11b227491c3399.png" type="image/png" sizes="16x16"/>
+        <link rel="stylesheet" href="Estilos/estiloFormulario.css" />
+        <script src="archivo.js"></script>
+        <title>Formulario SDLG</title>
+        <script>
+            var visible = false;
+            function iniciar(){
+                var elemento = document.getElementById("MenuCelularImg");
+                elemento.addEventListener("click", mostrarMenu);
+            }
+            function mostrarMenu(){
+                var elemento = document.getElementById("Menu");
+                if(!visible){
+                    elemento.style.display = "block";
+                    visible = true;
+                }else{
+                    elemento.style.display="none";
+                    visible = false;
+                }
+            }
+            window.addEventListener("load", iniciar);
+        </script>
+    </head>
+    <body>
+        <header id="Cabeza" onclick="alert('Easter egg')">
+            <div id="Titulo">
+                <img src="/Imagenes/585e4beacb11b227491c3399.png" width="30" alt="hazme un mundo sdlg nuevo para jalarme el ganzo"/>
+                SDLG
+            </div>
+        </header>
+        <nav id="MenuCelular">
+            <img src="Imagenes/Menu.png" id="MenuCelularImg"/>
+        </nav>
+        <nav id="Menu">
+            <ul>
+                <li><a href="index.html" class="BNElemento">Principal</a></li>
+                <li><a href="fotos.html" class="BNElemento">Fotos</a> </li>
+                <li><a href="videos.html" class="BNElemento">Videos</a></li>
+                <li><a href="Autores.html" class="BNElemento">Autores</a>
+                    <ul>
+                        <li><a href="Lempi4K.html">Lempi4K</a></li>
+                        <li id="ArribaXd"><a href="Takumotakashi.html">Takumotakashi</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="ReguladorFlujo"></div>
+        </nav>
+        <section>
+            <form name="InicioSesion" method="get" action="Procesar.php">
+                <p>
+                    <label>Usuario: <input type="text" name="user" minlength="1" maxlength="15"/></label>
+                </p>
+                <p>
+                    <label for="password">Contraseña: </label>
+                    <input type="password" name="password" id="password"/>
+                </p>
+                <p>
+                    <label for="sesions">Inicios Validos: </label>
+                    <input type="range" name="sesions" id="sesions" min="1" max="10" step="1" value="2"/>
+                </p>
+                <p>Quieres café? <label><input type="radio" name="op1" value="true" checked />Si</label>   <label><input type="radio" name="op1" value="false"/>No</label></p>
+                <p>Quieres lechexd? <label><input type="checkbox" name="leche" value="true" checked />Si</label></p>
+                <p>Fecha <label><input type="date" name="fecha" value="2021-01-07"/></label></p>
+                <p>Color <label><input type="color" name="color"/></label></p>
+                <datalist id="datos"> 
+                    <option value="123123123" label="Teléfono 1"> 
+                    <option value="456456456" label="Teléfono 2"> 
+                  </datalist> 
+                <p><label>Teléfono: <input type="tel" name="telefono" list="datos" title="Telefono"></label></p>
+                <p><label>Buscar: <input type="search" name="buscar" placeholder="Término a buscar"></label></p>
+                <p><progress value="30" max="100">0%</progress></p>
+                <p><meter value="100" min="0" max="100" low="40" high="80" optimum="100">60</meter></p>
+                <p><input type="submit" value="Entrar"/></p>
+            </form>
+        </section>
+    </body>
+</html>
